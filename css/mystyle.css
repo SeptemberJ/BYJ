@@ -1,0 +1,120 @@
+/*html {
+  font-family: sans-serif;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+}*/
+.background{
+    background-image: url(../image/P1/back.jpg) ;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    /*background-attachment: fixed;*/
+}
+body{
+overflow-x: hidden;
+}
+.headBackground{
+    background: url(../image/P1/title.png) no-repeat 50%;
+    height: 20%;
+    background-size: 60%;
+}
+.footBackground{
+    background: url(../image/P1/4.png) no-repeat 2%;
+    height: 23%
+}
+.van-uploader {
+    padding-top: 1rem;
+}
+.upload-text{
+    width: 80%;
+    /*padding-left: 16%;*/
+    padding-bottom: 6%;
+}
+.upload-text{
+    padding-bottom: 2%;
+}
+.upload-input{
+    width: 80%;
+    /*padding-left: 16%;*/
+    padding-bottom: 6%;
+}
+
+.el-form-item__label{
+    color: white;
+    padding-left: 7%;
+    font-size: 2.7rem;
+}
+el-input {
+    /*height: 4rem;*/
+}
+.el-input__inner{
+    height: 8rem;
+}
+.el-form-item__error{
+    left: 10%;
+}
+.el-col-2 {
+    width: 8%;
+    color: white;
+    text-align: center;
+}
+.el-form-item.is-required .el-form-item__label::before{
+    color: white;
+}
+.el-form-item {
+    margin-bottom: 8px;
+}
+.showRight {
+    width: 65%;
+    padding-left: 30%;
+    padding-bottom: .8rem;
+}
+.showLeft{
+    text-align: right;
+    color: white;
+}
+.giftId-column{
+    text-decoration: underline;
+    color: #001ea1;
+}
+
+.pop-table {
+    height: inherit;
+}
+
+.pop-table-cell {
+    font-size: 1px;
+}
+
+.explain {
+    font-size: smaller;
+    color: #001ea1;
+    margin-bottom: 2%;
+}
+
+.activityColumn {
+    font-size: small;
+    color: #3f3c3c;
+    margin-bottom: 2%;
+}
+
+.queryGift {
+    margin-left: 2%;
+}
+
+.saveAndSubmit {
+    margin-left: 40%;
+}
+.ruleName {
+    color: #1CA2E1;
+    cursor: pointer;
+}
+/*#wait*/
+/*{*/
+    /*position:absolute;*/
+    /*top:50px;*/
+    /*width:490px;*/
+    /*height: 600px;*/
+    /*filter:alpha(Opacity=80);-moz-opacity:0.8;opacity: 0.8;z-index:100; background-color: #717171;*/
+    /*display:block;*/
+/*}*/
