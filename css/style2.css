@@ -17,10 +17,9 @@
 .headBackground{
     background: url(../image/P1/title.png) no-repeat 50%;
     height: 15%;
-    background-size: 70%;
+    background-size: 40%;
+    margin-top: 15px;
     overflow:visible;
-    height: 150px;
-
 }
 .headBackgroundTwo{
 	position: relative;

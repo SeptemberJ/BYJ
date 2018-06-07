@@ -1,36 +1,23 @@
 ﻿<template id="index">
     <div class="Wrap">
-        <!-- <div class="background"> -->
-            <!--<div style=" : url(image/P1/notic.png) no-repeat;height: 100%"></div>-->
-            <div class="headBackground"></div>
-            <div style="background: url(image/P1/1.png) no-repeat 50%;height: 50%;background-size: 95%"></div>
-            <div class="next_item"  @click="gotoApply" style="background: url(image/P1/button.png) no-repeat 50%;
-            height: 7%;background-size: 40%;"></div>
-            <div class="footBackground" style="background-size: 40%"></div>
-        
-            <!-- </div> -->
-            <div style="position: relative;">
-                <img style="position:absolute;left: 0;top: 1em;left: 1em;width: 40%;" src="./image/P1/4.png">
-            </div>
-
-            </div>
-
+        <div class="headBackground"></div>
+        <div style="background: url(image/P1/1.png) no-repeat 50%;height: 50%;background-size: 95%"></div>
+        <div class="next_item"  @click="gotoApply" style="background: url(image/P1/button.png) no-repeat 50%;
+        height: 7%;background-size: 40%;"></div>
+        <div class="footBackground" style="background-size: 40%"></div>
+        <div style="position: relative;">
+            <img style="position:absolute;left: 0;top: 1em;left: 1em;width: 40%;" src="./image/P1/4.png">
+        </div>
+    </div>
 </template>
 <template id="apply">
     <div class="Wrap">
-    <!-- <div class="background" style="width: 160%;height: 155%;overflow:hidden"> -->
-    <!-- <div class="background" style="">
-        <div class="headBackground"></div>
-    <div> -->
     <div class="headBackground"></div>
     <el-form :model="form" ref="form" :rules="rules" class="demo-ruleForm" :label-width="120" label-position="left" style="margin-top: 10px">
         <el-row :gutter="20">
             <el-col :span="24">
                 <el-form-item label="省份" required>
                     <el-row :gutter="19" type="flex" class="row-bg" justify="start">
-                        <!-- <el-col :span="2">
-                            <span style="color: #fff;">省份</span>
-                        </el-col> -->
                         <el-col :span="8">
                             <el-form-item prop="province" style="">
                                 <el-select v-model="form.province" placeholder="" style="" @change="onChangeProvince">
@@ -200,16 +187,7 @@
         <div  @click="submitForm('form')" style="position:absolute;right: 20%; width: 40%;z-index: 99999; height: 100px;background: transparent; overflow: hidden;" ></div>
         <img style="position:absolute;left: 0;top: -1em;left: 10px;width: 30%;" src="image/P1/4.png">
     </div>
-    <!-- <div style="position: relative;">
-        <img @click="submitForm('form')" style="position:absolute;padding-left: 50%;padding-top: 10%;height: 9rem" src="image/P2/submit.png">
-        <img style="position:absolute;padding-left: 2rem;height: 30rem" src="image/P1/4.png">
-    </div> -->
-
-
-       </div>
-
     </div>
-</div>
 </template>
 
 <template id="upload">
@@ -218,18 +196,11 @@
         <div style="background-image: url(image/P5/bg.png);width:95%;height: 100%;margin: 0 auto; background-size: cover;">
             <div class="headBackgroundTwo"></div>
             <img  style="padding-top: 30px;padding-left: 40%;height: 2%" src="./image/P5/yulu.png"/>
-
-            
-
             <div style="padding: 10px;margin:10px 10px;text-align: center;background: #ddd">
                 <img @click="toPre" src="image/P5/pre.png" style="height: 2%"/>
-
-                 <div style="padding:7%;text-align: center;font-size: 1rem">{{selectedData}}</div>
-
+                <div style="padding:7%;text-align: center;font-size: 1rem">{{selectedData}}</div>
                 <img @click="toNext" src="image/P5/next.png" style="height: 2%"/>
             </div>
-            <!--</div>-->
-
             <div style="text-align: center;padding-top: 0rem;margin:10px 10px;">
             <el-input class="upload-text"
                     type="textarea"
@@ -243,52 +214,34 @@
                     clearable  style="margin-top: 10px;">
             </el-input>
             </div>
-
             <div style="text-align: center;margin-top: 10px;" >
             <img :src="imagePath" @click="change" style="padding-bottom: 2rem;height: 4%">
-            <!--<div style="color: #999;ine-height: 2rem;font-size: 1rem">-->
-            <!--上传你的江湖语录，您将同意您自己的网络名称，原创语录等信息授权给活动主办方使用-->
-            <!--</div>-->
             </div>
-            <!--<div style="background: url(image/P5/know.png) no-repeat 50%;height: 10%"></div>-->
-
-            <!--<el-checkbox-group v-model="checkList">-->
-                <!--<el-checkbox label="上传你的江湖语录，您将同意您自己的网络名称，原创语录等信息授权给活动主办方使用"></el-checkbox>-->
-            <!--</el-checkbox-group>-->
             <div style="position: relative;margin: 0 auto;text-align: center;">
-                <img @click="goBack" src="image/P5/4-1.png"/>
-                <img  @click="success" src="image/P5/4-2.png" style="margin-left: 20px;" />
+                <img style="width:25%" @click="goBack" src="image/P5/4-1.png"/>
+                <img style="width:25%" @click="success" src="image/P5/4-2.png" style="margin-left: 30px;" />
             </div>
-            <!-- <div style="position: relative;">
-                <img @click="goBack" style="position:absolute;padding-left: 20%;height:2em" src="image/P5/4-1.png"/>
-                <img  @click="success" style="position:absolute;padding-left: 60%;height:2em;" src="image/P5/4-2.png"/>
-            </div> -->
-
         </img>
     </div>
     </div>
 </template>
 
 <template id="success">
-    <!-- <div class="background"> -->
     <div class="Wrap">
         <div class="headBackground"></div>
-
-        <div style="position: relative;width: 90%;left: 5%;top: 5em">
-            <img style="width: 100%;position:absolute;height: auto" src="image/P3/successCommit.png" >
-            <img style="width: 40%;position: absolute;padding-left: 30%;padding-top: 200px" src="image/P3/2.png" @click="gotoApply">
-            <!--<div class="next_item"  @click="gotoApply" style="background: url(image/P3/2.png) no-repeat 50%;height: 7%;background-size: 40%"></div>-->
+        <div style="position: relative;width: 90%;height:250px;left: 5%;top: 1em;border: 0px solid red;">
+            <img style="width: 100%;position:absolute;height: 100%;" src="image/P3/successCommit.png" >
+            <img style="width: 40%;position: absolute;left: 30%;bottom:5px;height: 2rem" src="image/P3/2.png" @click="gotoApply">
         </div>
-
-
-        <!--<div style="background: url(image/P3/3.png) no-repeat 50%;height: 50%"></div>-->
-        <div class="footBackground" style="background-size: 35%;padding-top: 140%"></div>
+        <!-- <div class="footBackground" style="background-size: 35%;padding-top: 0px"></div> -->
+        <div style="position: relative;">
+            <img style="position:absolute;left: 0;top: 50px;left: 1em;width: 40%;" src="./image/P1/4.png">
+        </div>
     </div>
 </template>
 
 <template id="page">
         <div style="margin: 20px 0 20px 0">
-
             <div class="swiper-container" :class="swipeid">
                 <div class="swiper-wrapper">
                     <!-- 存放具体的轮播内容 -->
@@ -306,44 +259,38 @@
     <div id="app">
         <router-view></router-view>
     </div>
-    <!--<script type="text/javascript"-->
-            <!--src="//static.360buyimg.com/popd/js/resourceloader.js?v=1496193623357"></script>-->
-    <!-- 先引入 Vue -->
     <script src="https://unpkg.com/vue@2.5.13/dist/vue.js"></script>
     <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
 
     <!-- 引入组件库 -->
 
-    <link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/vant/lib/vant-css/index.css"> -->
+    <link rel="stylesheet" href="css/index.css">
 
      <!--引入组件-->
-    <script src="https://unpkg.com/vant/lib/vant.min.js"></script>
+    <!-- <script src="https://unpkg.com/vant/lib/vant.min.js"></script> -->
+    <script src="util/vant.min.js"></script>
 
-    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css"> -->
+    <link rel="stylesheet" href="css/themeChalkIndex.css">
+    
     <!-- 引入组件库 -->
-    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+    <!-- <script src="https://unpkg.com/element-ui/lib/index.js"></script> -->
+    <script src="util/index.js"></script>
 
-    <script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script>
-
-
-    <!--<script type="text/javascript" src="https://unpkg.com/distpicker/distpicker.data.js"></script>-->
-    <!--<script type="text/javascript" src="https://unpkg.com/distpicker/distpicker.js"></script>-->
+    <!-- <script src="https://unpkg.com/axios@0.18.0/dist/axios.min.js"></script> -->
+    <script src="util/axios.min.js"></script>
 
 
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.css">-->
-    <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/css/swiper.min.css">-->
 
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.js"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.min.js"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.esm.js"></script>-->
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.2/js/swiper.esm.bundle.js"></script>-->
-    <!-- <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"> -->
 
-   <!--  <link rel="stylesheet" href="./css/mystyle.css"/> -->
     <link rel="stylesheet" href="./css/style.css"/>
     <script src="./util/utils.js" type="text/javascript"></script>
-    <script src="https://cdn.bootcss.com/qs/6.5.2/qs.min.js"></script>
-    <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script>
+    <!--  <script src="https://cdn.bootcss.com/qs/6.5.2/qs.min.js"></script> -->
+    <script src="util/qs.min.js"></script>
+    <!-- <script src="https://cdn.bootcss.com/jquery/1.9.1/jquery.min.js"></script> -->
+    <script src="util/jquery.min.js"></script>
+
     <script src="./user/user-component.js" type="text/javascript"></script>
     <script src="./user/user-router.js" type="text/javascript"></script>
 

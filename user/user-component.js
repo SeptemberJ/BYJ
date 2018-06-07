@@ -126,6 +126,7 @@ app.apply = {
                 },
                 identity:'',
                 quotation:'',
+                luokuang:'',
                 identityPic:''
             },
             rules:{
@@ -196,14 +197,9 @@ app.apply = {
     mounted: function () {
         var self = this
         this.$nextTick(function () {
-            // Code that will run only after the
-            // entire view has been rendered
-            // document.getElementById("goToUpload").onblur(function () {
-            //     console.log('sssss')
-            // })
-
             if (this.$route.query && this.$route.query.quotation) {
                 self.form.quotation = this.$route.query.quotation
+                self.form.luokuang = this.$route.query.name
             }
         })
         if(JSON.parse(localStorage.getItem("dataInfo")).identityPic){
@@ -241,6 +237,7 @@ app.apply = {
                 sh_address:this.form.address.name,
                 fpic:this.form.identity,
                 yulu:this.form.quotation,
+                fsignature:this.form.luokuang,
                 open_id:localStorage.getItem("openid")
             };
             console.log(DATA)
@@ -274,12 +271,6 @@ app.apply = {
                 console.log(error)
                 loadingSubmit.close()
               })
-
-
-        //     this.$router.push({
-        //         path: '/success'
-        // //         // query: {activity: JSON.stringify(this.pageData[index])}
-        //     })
         },
         updateCity(){
             var that = this
@@ -360,9 +351,6 @@ app.apply = {
             })
             this.form.address.city = ''
             this.form.address.area = ''
-             // sh_province:this.form.address.province,
-             //    sh_city:this.form.address.city,
-             //    sh_area:this.form.address.area,
         },
         onChangeAdCity(e){
             var that = this
@@ -407,12 +395,10 @@ app.apply = {
               canvas.width = 500;
               canvas.height = 500;;
               drawer.drawImage(img, 0, 0, canvas.width, canvas.height);
-              //上传到七牛云
-              var base64 = canvas.toDataURL("image/jpeg", quality); // 这里就拿到了压缩后的base64图片
+              var base64 = canvas.toDataURL("image/jpeg", quality); // 压缩后的base64图片
               var FileData = {
                 imgStr:base64.replace(/^data:image\/(jpeg|png|gif|jpeg);base64,/,'')
                 }
-
                 axios.post(Url + 'uploadBase64',Qs.stringify(FileData)
                 ).then((res)=> {
                     if(res.data.code == 0){
@@ -425,7 +411,6 @@ app.apply = {
                     loadingItem.close();
                 })
               }
-
             
         },
         OnErrorPic(){
@@ -467,10 +452,8 @@ app.upload={
             if (this.num && this.num > 0) {
                 this.num--
                 this.selectedData = this.quote[this.num]
-                // this.quotation = this.quote[this.num]
             }  else {
                 this.selectedData = this.quote[0]
-                // this.quotation = this.quote[0]
             }
 
         },
@@ -478,10 +461,8 @@ app.upload={
             if (this.num < this.quote.length-1) {
                 this.num++
                 this.selectedData = this.quote[this.num]
-                // this.quotation = this.quote[this.num]
             } else {
                 this.selectedData = this.quote[this.quote.length-1]
-                // this.quotation = this.quote[this.quote.length-1]
             }
 
 
@@ -527,9 +508,18 @@ app.upload={
                 });
                 return
             }
+            if(this.name == '' || this.name == 'undefined'){
+                this.$notify({
+                    title: '',
+                    message: '请填写落款人！',
+                    type: 'warning'
+                });
+                return
+            }
             var DATA = {
                 yulu: this.quotation,
-                open_id:localStorage.getItem("openid")
+                open_id:localStorage.getItem("openid"),
+                fsignature:this.name
             }
             axios.get(Url + 'serSign?open_id=' + GetRequest()["openid"]
             ).then((res)=> {
@@ -564,25 +554,6 @@ app.upload={
                 console.log(error)
                 loadingyulu.close()
             })
-            // if(localStorage.getItem("IfSigned")){
-            //     axios.post(Url + 'insertSignEntry',DATA
-            //       ).then((res)=> {
-            //         if(res.data.code == 0){
-            //             this.$router.push({
-            //             path: '/success',
-            //             //query: {quotation: self.quotation, name: self.name}
-            //         })
-            //         }
-            //       }).catch((error)=> {
-            //         console.log(error)
-            //       })
-
-            // }else{
-            //     this.$router.push({
-            //         path: '/apply',
-            //         query: {quotation: self.quotation, name: self.name}
-            //     })
-            // }
         }
     }
 }
